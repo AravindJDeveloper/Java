@@ -1,0 +1,126 @@
+package org.example;
+
+import java.util.Arrays;
+
+public class MethodsInString {
+    public static void main(String[] args) {
+        String str = "aravind";
+
+        // Finding the 1st occurrence of a character in the given string
+        int index = str.indexOf('v');
+        System.out.println("1. 1st position of character 'v' in given string: " + index);
+
+        // Finding the first occurrence of a substring
+        int index1 = str.indexOf("ind");
+        System.out.println("2. 1st position of substring 'ind': " + index1);
+
+        // Finding the last occurrence of a character in the given string
+        int lastIndex = str.lastIndexOf('a');
+        System.out.println("3. Last position of character 'a' in given string: " + lastIndex);
+
+        // Finding the last occurrence of a substring
+        int lastIndex1 = str.lastIndexOf("nd");
+        System.out.println("4. Last position of substring 'nd': " + lastIndex1);
+
+        // Checking if the string starts with a specific prefix
+        if (str.startsWith("a")) {
+            System.out.println("5. Yes, it starts with 'a'");
+        } else {
+            System.out.println("5. No, it doesn't start with 'a'");
+        }
+
+        // Checking if the string ends with a specific suffix
+        if (str.endsWith("d")) {
+            System.out.println("6. Yes, it ends with 'd'");
+        } else {
+            System.out.println("6. No, it doesn't end with 'd'");
+        }
+
+        // Matching the string with a regex (should be a pattern, not a single character)
+        // Example pattern: "^aravind$" (matches the entire string exactly)
+        if (str.matches("aravind")) {
+            System.out.println("7. Yes, it matches");
+        } else {
+            System.out.println("7. No, it doesn't match");
+        }
+
+        // Checking if the string contains a specific substring
+        if (str.contains("vi")) {
+            System.out.println("8. Yes, it contains 'vi'");
+        } else {
+            System.out.println("8. No, it doesn't contain 'vi'");
+        }
+
+        // Checking if the string equals another string (case-sensitive)
+        if (str.equals("aravinD")) {
+            System.out.println("9. Yes, it is the same as 'aravinD'");
+        } else {
+            System.out.println("9. No, it is not the same as 'aravinD'");
+        }
+
+        // Checking if the string equals another string (case-insensitive)
+        if (str.equalsIgnoreCase("aravinD")) {
+            System.out.println("10. Yes, it is the same as 'aravinD' (case-insensitive)");
+        } else {
+            System.out.println("10. No, it is not the same as 'aravinD' (case-insensitive)");
+        }
+
+        // Checking if the string is empty
+        if (str.isEmpty()) {
+            System.out.println("11. Yes, it is empty");
+        } else {
+            System.out.println("11. No, it is not empty");
+        }
+
+        // Concatenating strings
+        String concat = str.concat(" J");
+        System.out.println("12. Concatenated String: " + concat);
+
+        // Converting to lowercase and uppercase
+        System.out.println("13. Given String in Lowercase: " + concat.toLowerCase());
+        System.out.println("14. Given String in Uppercase: " + concat.toUpperCase());
+
+        // Accessing a specific character
+        char ch = str.charAt(4);
+        System.out.println("15. Character at index 4: " + ch);
+
+        // Getting the first 4 letters
+        String sub = str.substring(0, 4);
+        System.out.println("16. First 4 letters of the given string: " + sub);
+
+        // Getting the substring from index 4 to the end
+        String sub1 = str.substring(4);
+        System.out.println("17. Substring from index 4: " + sub1);
+
+        // Finding the length of the given string
+        System.out.println("18. Length of the given string: " + str.length());
+
+        // Removing leading and trailing whitespace
+        String string1 = "  There is a Ghost ".trim();
+        System.out.println("19. Given String without spaces: " + string1);
+
+        // Replacing characters
+        String out = str.substring(0, 2);
+        System.out.println("20. Replaced character 'a' with 'A': " + out.replace('a', 'A') + str.substring(2));
+
+        // Replacing substrings
+        System.out.println("21. Replaced 'ar' with 'Ar': " + str.replace("ar", "Ar"));
+        System.out.println("21. Replaced 'nd' with 'nd j': " + str.replace("nd", "nd j"));
+
+        // Splitting strings
+        String new1 = str.replace("nd", "nd j");
+        String[] words = new1.split(" ");
+        System.out.println("22. Split the words: " + Arrays.toString(words));
+
+        String new2 = "My Name is Aravind J";
+        String[] words1 = new2.split(" ", 5);
+        System.out.println("23. Split the words with limit: " + Arrays.toString(words1));
+
+        // Converting an int value to a string
+        String num = String.valueOf(102505);
+        System.out.println("24. My Employee ID is: " + num);
+
+        // Converting a string to a character array
+        System.out.println("25. Converting String to Characters: " + Arrays.toString(str.toCharArray()));
+    }
+}
